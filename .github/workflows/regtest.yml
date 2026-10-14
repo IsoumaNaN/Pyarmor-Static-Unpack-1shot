@@ -11,7 +11,7 @@ jobs:
   regtest:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           path: project
           persist-credentials: false
@@ -33,7 +33,7 @@ jobs:
           cmake --install .
 
       - name: Checkout regtest repository
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: Lil-Ran/armorshot-regtest
           token: ${{ secrets.REGTEST_PAT }}
@@ -61,7 +61,7 @@ jobs:
           steps.commit_message.outputs.message &&
           (hashFiles('regtest/**') != '') &&
           (contains(steps.commit_message.outputs.message, 'update tests'))
-        uses: EndBug/add-and-commit@290ea2c423ad77ca9c62ae0f5b224379612c0321 # v10.0.0
+        uses: EndBug/add-and-commit@cc9c08ba6c8df3b93a8f2db63e89b98368ae2ae8 # v11.1.1
         with:
           cwd: ./regtest
           add: .

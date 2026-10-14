@@ -23,7 +23,7 @@
 
 #include "ASTree.h"
 
-const char* VERSION = "v0.4.0";
+const char* VERSION = "v0.4.1";
 
 bool unstableTryBlocksEnabled = false;
 
